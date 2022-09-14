@@ -3,13 +3,14 @@ module.exports = class {
   _ready_hub = []
   _event_hub = {}
 
-  constructor(name) {
+  constructor(name, version = 1) {
     this.name = name
+    this._version = version
     this._Contact()
   }
 
   _Contact() {
-    let request = indexedDB.open(this.name, 1)
+    let request = indexedDB.open(this.name, this._version)
 
     request.onsuccess = () => {
       this._db = request.result

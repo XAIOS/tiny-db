@@ -16,7 +16,8 @@ indexedDB 是一种浏览器底层的 API，能够存放的内容很多，与用
 import DB from '@xaios/tiny-db'
 
 // 实例化数据库对象，传入要连接的数据库名称
-this.db = new DB('test_db')
+// 第二参数可选，指定数据库版本号，默认值为 1
+this.db = new DB('test_db', 1)
 
 // 数据库连接是异步操作，要确保在连接成功后才进行一些调用，通常连接速度是毫秒级的
 this.db.Ready(() => {})
